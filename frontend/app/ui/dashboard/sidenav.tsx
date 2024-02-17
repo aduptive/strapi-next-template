@@ -3,6 +3,33 @@ import NavLinks from '@/app/ui/dashboard/nav-links';
 import AcmeLogo from '../acme-logo';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import { logoutAction } from '@/app/lib/auth/logout-action';
+import NavMenu from './nav-menu';
+
+const links = [
+  { name: "Home", href: "/dashboard", submenu: [] },
+  {
+    name: "Invoices",
+    href: "/dashboard/invoices",
+    submenu: [
+      {
+        name: "Sub Invoices",
+        href: "/dashboard/invoices/sub",
+        submenu: [
+          {
+            name: "Sub Sub Invoices",
+            href: "/dashboard/invoices/Sub/Sub",
+            submenu: [          {
+              name: "Sub Sub Sub Invoices",
+              href: "/dashboard/invoices/Sub/Sub/Sub",
+              submenu: []
+            },]
+          },
+        ]
+      },
+    ]
+  },
+];
+
 export default function SideNav() {
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
@@ -16,6 +43,7 @@ export default function SideNav() {
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
+        <NavMenu items={links} />
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
         <form
           action={async () => {

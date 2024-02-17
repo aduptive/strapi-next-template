@@ -1,0 +1,281 @@
+// # Colors
+const colors = [
+  { color: '#000000', label: 'Black' },
+  { color: '#FFFFFF', label: 'White' },
+  { color: '#D8CFC1', label: 'beige' },
+  { color: '#E7DDCC', label: 'beige-light' },
+  { color: '#9F8456', label: 'beige-1' },
+  { color: '#AE780A', label: 'ochre' },
+  { color: '#5A2D00', label: 'ochre-1' },
+  { color: '#70242B', label: 'red' },
+  { color: '#44151A', label: 'red-1' }
+]
+
+// # Font Family
+const fontFamilyOptions = [
+  {
+    title: 'Gatwick',
+    className: 'font-gatwick'
+  },
+  {
+    title: 'Mulish',
+    className: 'font-mulish'
+  },
+]
+
+// Font Sizes
+const fontSizeOptions = [
+  /* Heading */
+  {
+    title: 'Hero 96px',
+    className: "heading-hero"
+  },
+  {
+    title: 'Display 64px',
+    className: "display"
+  },
+  {
+    title: 'Heading 1 / 48px',
+    className: "heading-1"
+  },
+  {
+    title: 'Heading 2 / 36px',
+    className: "heading-2"
+  },
+  {
+    title: 'Heading 3 / 24px',
+    className: "heading-3"
+  },
+  {
+    title: 'Heading 4 /  20px',
+    className: "heading-4"
+  },
+  {
+    title: 'Heading 5 /  16px',
+    className: "heading-5"
+  },
+  {
+    title: 'Heading 6 / 13px',
+    className: "heading-6"
+  },
+  {
+    title: 'Text XS / 12px',
+    className: "text-xs"
+  },
+  {
+    title: 'Text SM / 14px',
+    className: "text-sm"
+  },
+  {
+    title: 'Text Base / 16px',
+    className: "text-base"
+  },
+  {
+    title: 'Text LG / 18px',
+    className: "text-lg"
+  }
+]
+
+const styles = `
+  .ck .heading-hero {
+    font-size: 96px;
+    line-height: 4rem;
+  }
+  .ck .display {
+    font-size: 64px;
+    line-height: 2rem;
+  }
+  .ck .heading-1 {
+    font-size: 48px;
+    line-height: 1.4rem;
+  }
+  .ck .heading-2 {
+    font-size: 36px;
+    line-height: 1.2rem;
+  }
+  .ck .heading-3 {
+    font-size: 24px;
+    line-height: 1.2rem;
+  }
+  .ck .heading-4 {
+    font-size: 20px;
+    line-height: 1.2rem;
+  }
+  .ck .heading-5 {
+    font-size: 16px;
+    line-height: 1.2rem;
+  }
+  .ck .heading-6 {
+    font-size: 13px;
+    line-height: 1.2rem;
+  }
+  .ck .text-xs {
+    font-size: 12px;
+    line-height: 1.333;
+  }
+  .ck .text-base {
+    font-size: 16px;
+    line-height: 1.333;
+  }
+  .ck .text-sm {
+    font-size: 14px;
+    line-height: 1.333;
+  }
+  .ck .text-lg {
+    font-size: 18px;
+    line-height: 1.333;
+  }
+  .ck .text-xl {
+    font-size: 20px;
+    line-height: 1.333;
+  }
+`
+
+// Create more complex fontsize object
+const fontFamily = {
+  options: fontFamilyOptions.map(option => ({
+    title: option.title,
+    model: option.title,
+    view: {
+      name: 'span',
+      classes: [option.className]
+    }
+  }))
+}
+
+// Create more complex fontsize object
+const fontSize = {
+  options: fontSizeOptions.map(option => ({
+    title: option.title,
+    model: option.title,
+    view: {
+      name: 'span',
+      classes: [option.className]
+    }
+  }))
+}
+
+
+// Full text editor
+const baseEditor = {
+  field: {
+    key: "baseEditor",
+    value: "baseEditor",
+    metadatas: {
+      intlLabel: {
+        id: "ckeditor5.preset.custom.label",
+        defaultMessage: "Base Editor",
+      },
+    },
+  },
+  styles,
+  editorConfig: {
+    fontColor: {
+      colors
+    },
+    fontSize,
+    fontFamily,
+    plugins: [
+      CKEditor5.autoformat.Autoformat,
+      CKEditor5.basicStyles.Bold,
+      CKEditor5.basicStyles.Italic,
+      CKEditor5.basicStyles.Underline,
+      CKEditor5.essentials.Essentials,
+      CKEditor5.heading.Heading,
+      CKEditor5.indent.Indent,
+      CKEditor5.link.Link,
+      CKEditor5.list.List,
+      CKEditor5.paragraph.Paragraph,
+      CKEditor5.fontWithPicker.FontFamily,
+      CKEditor5.fontWithPicker.FontSize,
+      window.CKEditor5.fontWithPicker.FontColor,
+      CKEditor5.sourceEditing.SourceEditing,
+    ],
+    link: {
+      addTargetToExternalLinks: true
+    },
+    toolbar: [
+      'heading',
+      '|',
+      'bold', 'italic', 'underline',
+      '|',
+      'fontColor',
+      'FontFamily',
+      'FontSize',
+      '|',
+      'link',
+      '|',
+      'bulletedList', 'numberedList',
+      'sourceEditing',
+    ],
+    heading: {
+      options: [
+        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
+      ]
+    },
+  }
+}
+
+// Custom Editor
+const customEditor = {
+  field: {
+    key: "customEditor",
+    value: "customEditor",
+    metadatas: {
+      intlLabel: {
+        id: "ckeditor5.preset.custom.label",
+        defaultMessage: "Custom Editor",
+      },
+    },
+  },
+  styles,
+  editorConfig: {
+    fontColor: {
+      colors
+    },
+    fontSize,
+    fontFamily,
+    plugins: [
+      CKEditor5.autoformat.Autoformat,
+      CKEditor5.heading.Heading,
+      CKEditor5.paragraph.Paragraph,
+      CKEditor5.fontWithPicker.FontFamily,
+      CKEditor5.fontWithPicker.FontSize,
+      window.CKEditor5.fontWithPicker.FontColor
+    ],
+    toolbar: [
+      'heading',
+      '|',
+      'FontFamily',
+      'FontSize',
+      'fontColor',
+    ],
+    heading: {
+      options: [
+        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
+      ]
+    },
+  }
+}
+
+globalThis.CKEditorConfig = {
+  // Editors
+  configs: {
+    baseEditor,
+    customEditor
+  },
+  theme: {
+  }
+}
