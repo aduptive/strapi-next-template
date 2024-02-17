@@ -1,0 +1,39 @@
+{
+  "collectionName": "forms_textarea_fields",
+  "info": {
+    "displayName": "Campo de Texto grande",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["full", "half"],
+      "required": true,
+      "default": "full"
+    },
+    "showConditions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "forms-assets.field-conditions",
+      "required": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

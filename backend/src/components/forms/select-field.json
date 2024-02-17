@@ -1,0 +1,52 @@
+{
+  "collectionName": "forms_select_fields",
+  "info": {
+    "displayName": "Campo de Seleção",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "forms-assets.select-option",
+      "required": true,
+      "min": 1
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["select", "radio", "checkbox"],
+      "required": true,
+      "default": "select"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": ["full", "half"],
+      "required": true,
+      "default": "full"
+    },
+    "showConditions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "forms-assets.field-conditions",
+      "required": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

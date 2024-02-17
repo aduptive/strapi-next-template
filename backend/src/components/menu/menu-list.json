@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_menu_menu_lists",
+  "info": {
+    "displayName": "Menu List",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sku": {
+      "type": "string"
+    }
+  }
+}

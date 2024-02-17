@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Menu": {
+      "type": "json"
+    }
+  }
+}

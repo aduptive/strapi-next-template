@@ -1,0 +1,16 @@
+{
+  "collectionName": "forms_hidden_fields",
+  "info": {
+    "displayName": "Campo Escondido",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

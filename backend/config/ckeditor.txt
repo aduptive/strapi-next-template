@@ -2,119 +2,55 @@
 const colors = [
   { color: '#000000', label: 'Black' },
   { color: '#FFFFFF', label: 'White' },
-  { color: '#D8CFC1', label: 'beige' },
-  { color: '#E7DDCC', label: 'beige-light' },
-  { color: '#9F8456', label: 'beige-1' },
-  { color: '#AE780A', label: 'ochre' },
-  { color: '#5A2D00', label: 'ochre-1' },
-  { color: '#70242B', label: 'red' },
-  { color: '#44151A', label: 'red-1' }
+  { color: '#295991', label: 'Blue Medium' },
+  { color: '#255185', label: 'Blue Light' },
+  { color: '#224A78', label: 'Blue Dark' }
 ]
 
 // # Font Family
 const fontFamilyOptions = [
   {
-    title: 'Gatwick',
-    className: 'font-gatwick'
+    title: 'deafult',
+    className: 'font-galano' // Tailwind ClassName
   },
   {
-    title: 'Mulish',
-    className: 'font-mulish'
+    title: 'roboto',
+    className: 'font-roboto' // Tailwind ClassName
   },
 ]
 
 // Font Sizes
 const fontSizeOptions = [
-  /* Heading */
   {
-    title: 'Hero 96px',
-    className: "heading-hero"
+    title: 'Base',
+    className: "text-base" // Tailwind ClassName
   },
   {
-    title: 'Display 64px',
-    className: "display"
+    title: '12',
+    className: "text-xs" // Tailwind ClassName
   },
   {
-    title: 'Heading 1 / 48px',
-    className: "heading-1"
+    title: '14',
+    className: "text-sm" // Tailwind ClassName
   },
   {
-    title: 'Heading 2 / 36px',
-    className: "heading-2"
+    title: '18',
+    className: "text-lg" // Tailwind ClassName
   },
   {
-    title: 'Heading 3 / 24px',
-    className: "heading-3"
+    title: '20',
+    className: "text-xl" // Tailwind ClassName
   },
-  {
-    title: 'Heading 4 /  20px',
-    className: "heading-4"
-  },
-  {
-    title: 'Heading 5 /  16px',
-    className: "heading-5"
-  },
-  {
-    title: 'Heading 6 / 13px',
-    className: "heading-6"
-  },
-  {
-    title: 'Text XS / 12px',
-    className: "text-xs"
-  },
-  {
-    title: 'Text SM / 14px',
-    className: "text-sm"
-  },
-  {
-    title: 'Text Base / 16px',
-    className: "text-base"
-  },
-  {
-    title: 'Text LG / 18px',
-    className: "text-lg"
-  }
 ]
 
+
 const styles = `
-  .ck .heading-hero {
-    font-size: 96px;
-    line-height: 4rem;
-  }
-  .ck .display {
-    font-size: 64px;
-    line-height: 2rem;
-  }
-  .ck .heading-1 {
-    font-size: 48px;
-    line-height: 1.4rem;
-  }
-  .ck .heading-2 {
-    font-size: 36px;
-    line-height: 1.2rem;
-  }
-  .ck .heading-3 {
-    font-size: 24px;
-    line-height: 1.2rem;
-  }
-  .ck .heading-4 {
-    font-size: 20px;
-    line-height: 1.2rem;
-  }
-  .ck .heading-5 {
+  .ck .text-base {
     font-size: 16px;
-    line-height: 1.2rem;
-  }
-  .ck .heading-6 {
-    font-size: 13px;
-    line-height: 1.2rem;
+    line-height: 1.333;
   }
   .ck .text-xs {
     font-size: 12px;
-    line-height: 1.333;
-  }
-  .ck .text-base {
-    font-size: 16px;
     line-height: 1.333;
   }
   .ck .text-sm {
@@ -169,7 +105,7 @@ const baseEditor = {
     },
   },
   styles,
-  editorConfig: {
+  editorConfig:{
     fontColor: {
       colors
     },
@@ -211,12 +147,9 @@ const baseEditor = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
         { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
       ]
     },
   }
@@ -235,7 +168,7 @@ const customEditor = {
     },
   },
   styles,
-  editorConfig: {
+  editorConfig:{
     fontColor: {
       colors
     },
@@ -259,12 +192,9 @@ const customEditor = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
         { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
-        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
-        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
       ]
     },
   }
@@ -277,5 +207,7 @@ globalThis.CKEditorConfig = {
     customEditor
   },
   theme: {
+    dark: '',
+    light: ''
   }
 }
