@@ -1059,11 +1059,6 @@ export interface ApiInvoiceInvoice extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    customer: Attribute.Relation<
-      'api::invoice.invoice',
-      'oneToOne',
-      'api::customer.customer'
-    >;
     amount: Attribute.Integer;
     status: Attribute.Enumeration<['pending', 'paid']>;
     date: Attribute.Date;
